@@ -1,0 +1,47 @@
+<c-base title="My App">
+  <c-layout.partial.navbar centered>
+
+    <c-slot name="logo">
+      <div class="flex items-center gap-2">
+        <c-icon name="rocket"/>
+        <h1>My App</h1>
+      </div>
+    </c-slot>
+
+    <c-slot name="center">
+      <c-button variante="primary">Home</c-button>
+      <c-button variante="primary">Components</c-button>
+      <c-button variante="primary">Docs</c-button>
+    </c-slot>
+
+    <c-slot name="end">
+      <c-dropdown variant="ghost" icon="user">
+        <c-navbar orientation="vertical">
+          <c-navbar.item>Profil</c-navbar.item>
+          <c-navbar.item>Preferences</c-navbar.item>
+        </c-navbar>
+      </c-dropdown>
+
+    </c-slot>
+
+  </c-layout.partial.navbar>
+
+  <c-breadcrumbs>
+    <c-breadcrumb href="#" label="Home" icon="house"/>
+    <c-breadcrumb href="#" label="Components" icon="component"/>
+    <c-breadcrumb href="#" label="Docs" icon="copy"/>
+  </c-breadcrumbs>
+
+  <div class="flex flex-wrap gap-2">
+
+    {% for i in "123456" %}
+
+      <c-card>
+        <c-button variant="primary">Boutton {{i}}</c-button>
+      </c-card>
+
+    {% endfor %}
+  </div>
+
+
+</c-base>
